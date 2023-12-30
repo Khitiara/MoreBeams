@@ -1,0 +1,4 @@
+displayName = More Beams
+author = Khitiara, Ezren, Blu3
+version = 0.1
+buildIgnore = .vs\*, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, ignore\*, .git\*, .idea\*, template.png, preview.png

@@ -1,0 +1,38 @@
+# This file will automatically update with entries for new content after a build and reload
+
+Items: {
+	AshWoodBeamItem: {
+		DisplayName: Ash Wood Beam
+		Tooltip: ""
+	}
+
+	EbonwoodBeamItem: {
+		DisplayName: Ebonwood Beam
+		Tooltip: ""
+	}
+
+	ShadewoodBeamItem: {
+		DisplayName: Shadewood Beam
+		Tooltip: ""
+	}
+
+	PalmWoodBeamItem: {
+		DisplayName: Palm Wood Beam
+		Tooltip: ""
+	}
+
+	DynastyWoodBeamItem: {
+		DisplayName: Dynasty Wood Beam
+		Tooltip: ""
+	}
+
+	PearlwoodBeamItem: {
+		DisplayName: Pearlwood Beam
+		Tooltip: ""
+	}
+
+	SpookyWoodBeamItem: {
+		DisplayName: Spooky Wood Beam
+		Tooltip: ""
+	}
+}

@@ -1,0 +1,1 @@
+Adds beams for all types of wood which are missing them in vanilla. Thanks to Ezren and blu3 for making the sprites!
