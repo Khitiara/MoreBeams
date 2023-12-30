@@ -1,3 +1,3 @@
 Adds beams for all types of wood which are missing them in vanilla. Thanks to Ezren and PossiblyBlu3 for making the sprites!
 
-NOTE: switches cannot be placed on the sides of the new beams yet - an update will come once we figure that out!
+UPDATE 0.2: Placing switches etc on mod beams now works!

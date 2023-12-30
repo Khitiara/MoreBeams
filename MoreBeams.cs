@@ -1,47 +1,49 @@
+using System.Collections.Generic;
+using System.Linq;
 using MoreBeams.Items;
 using MoreBeams.Tiles;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ObjectData;
 
-namespace MoreBeams
+namespace MoreBeams;
+
+public class MoreBeams : Mod
 {
-	public class MoreBeams : Mod
-	{
-		private static readonly (string, short, short)[] Woods = {
-			("AshWood", DustID.Ash, ItemID.AshWood),
-			("Ebonwood", DustID.Ebonwood, ItemID.Ebonwood),
-			("Shadewood", DustID.Shadewood, ItemID.Shadewood),
-			("PalmWood", DustID.PalmWood, ItemID.PalmWood),
-			("DynastyWood", DustID.DynastyWood, ItemID.DynastyWood),
-			("Pearlwood", DustID.Pearlwood, ItemID.Pearlwood),
-			("SpookyWood", DustID.SpookyWood, ItemID.SpookyWood),
-		};
+	private readonly List<int> _beamTilesAdded = new();
+	// private Dictionary<(int,int), int[]> _restoreTileData = new(5);
+	// private static readonly int[] vanillaTilesToModify = new[] {
+	// 	442,593,630,631,136,
+	// };
+	public override void Load() {
+		AddBeam("AshWood", DustID.Ash, ItemID.AshWood);
+		AddBeam("Ebonwood", DustID.Ebonwood, ItemID.Ebonwood);
+		AddBeam("Shadewood", DustID.Shadewood, ItemID.Shadewood);
+		AddBeam("PalmWood", DustID.PalmWood, ItemID.PalmWood);
+		AddBeam("DynastyWood", DustID.DynastyWood, ItemID.DynastyWood);
+		AddBeam("Pearlwood", DustID.Pearlwood, ItemID.Pearlwood);
+		AddBeam("SpookyWood", DustID.SpookyWood, ItemID.SpookyWood);
 
-		// private List<int>     _beamTilesAdded  = new();
-		// private Dictionary<(int,int), int[]> _restoreTileData = new(5);
-		// private static readonly int[] vanillaTilesToModify = new[] {
-		// 	442,593,630,631,136,
-		// };
-		public override void Load() {
-			foreach ((string wood, short dust, short item) in Woods) {
-				BeamTile tile = new($"{wood}Beam", dust);
-				AddContent(tile);
-				// _beamTilesAdded.Add(tile.Type);
-				AddContent(new BeamItem($"{wood}BeamItem", item, tile.Type));
-			}
+		On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
 
-			// for (int index = 0; index < vanillaTilesToModify.Length; index++) {
-			// 	int tile = vanillaTilesToModify[index];
-			// 	TileObjectData data = TileObjectData.GetTileData(tile,0);
-			// 	for (int i = 1; i <= data.AlternatesCount; i++) {
-			// 		TileObjectData altData = TileObjectData.GetTileData(tile, 0, i);
-			//
-			// 	}
-			// }
-		}
-
-		// public override void Unload() {
-		// 	base.Unload();
-		// }
 	}
+
+	private bool OnTileObjectDataOnIsValidAlternateAnchor(On_TileObjectData.orig_isValidAlternateAnchor orig, TileObjectData self, int type) {
+		bool ret = orig(self, type);
+		if (!ret && self.AnchorAlternateTiles.Contains(TileID.WoodenBeam)) {
+			return _beamTilesAdded.Contains(type);
+		}
+        return ret;
+	}
+
+	private void AddBeam(string name, short dust, short item) {
+		BeamTile tile = new($"{name}Beam", dust);
+		AddContent(tile);
+		_beamTilesAdded.Add(tile.Type);
+		AddContent(new BeamItem($"{name}BeamItem", item, tile.Type));
+	}
+
+	// public override void Unload() {
+	// 	base.Unload();
+	// }
 }
