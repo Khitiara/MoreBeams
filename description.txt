@@ -1,3 +1,5 @@
 Adds beams for all types of wood which are missing them in vanilla. Thanks to Ezren and PossiblyBlu3 for making the sprites!
 
 UPDATE 0.2: Placing switches etc on mod beams now works!
+
+New dynasty and spooky beam textures might come later, nothing set in stone yet.
