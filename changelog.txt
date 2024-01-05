@@ -1,1 +1,2 @@
-﻿Placing switches etc on mod beams now works!
+﻿Added gray brick, stone slab, fancy dynasty wood, and new spooky and regular dynasty wood beams.
+The old spooky and dynasty beams can still be obtained by shimmering the new variants.

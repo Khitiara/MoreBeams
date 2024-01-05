@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using MoreBeams.Items;
 using MoreBeams.Tiles;
@@ -8,7 +9,8 @@ using Terraria.ObjectData;
 
 namespace MoreBeams;
 
-public class MoreBeams : Mod
+[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
+public sealed class MoreBeams : Mod
 {
 	private readonly List<int>               _beamTilesAdded = new();
 	internal readonly Dictionary<string, int> BeamItems       = new();
@@ -24,9 +26,12 @@ public class MoreBeams : Mod
 		AddBeam(nameof(ItemID.PalmWood), DustID.PalmWood, ItemID.PalmWood);
 		AddBeam(nameof(ItemID.DynastyWood), DustID.DynastyWood, ItemID.DynastyWood, true, "NewDynastyWood");
 		AddBeam(nameof(ItemID.Pearlwood), DustID.Pearlwood, ItemID.Pearlwood);
-		AddBeam(nameof(ItemID.SpookyWood), DustID.SpookyWood, ItemID.SpookyWood);
-        AddBeam("FancyDynastyWood", DustID.DynastyWood, ItemID.DynastyWood);
-        AddBeam("NewDynastyWood", DustID.DynastyWood, ItemID.DynastyWood, ancientVariant: "DynastyWood");
+		AddBeam(nameof(ItemID.SpookyWood), DustID.SpookyWood, ItemID.SpookyWood, true, "NewSpookyWood");
+		AddBeam("FancyDynastyWood", DustID.DynastyWood, ItemID.DynastyWood);
+		AddBeam("NewDynastyWood", DustID.DynastyWood, ItemID.DynastyWood, ancientVariant: "DynastyWood");
+		AddBeam("NewSpookyWood", DustID.SpookyWood, ItemID.SpookyWood, ancientVariant: "SpookyWood");
+		AddBeam(nameof(ItemID.GrayBrick), DustID.Stone, ItemID.GrayBrick);
+		AddBeam(nameof(ItemID.StoneSlab), DustID.Stone, ItemID.StoneSlab);
 
 		On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
 	}

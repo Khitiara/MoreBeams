@@ -32,17 +32,32 @@ Items: {
 	}
 
 	SpookyWoodBeamItem: {
-		DisplayName: Spooky Wood Beam
+		DisplayName: Ancient Spooky Wood Beam
 		Tooltip: ""
 	}
 
-    FancyDynastyWoodBeamItem: {
-        DisplayName: Fancy Dynasty Wood Beam
-        Tooltip: ""
-    }
+	FancyDynastyWoodBeamItem: {
+		DisplayName: Fancy Dynasty Wood Beam
+		Tooltip: ""
+	}
 
-    NewDynastyWoodBeamItem: {
-        DisplayName: Dynasty Wood Beam
-        Tooltip: "Shimmers into the old variant"
-    }
+	NewDynastyWoodBeamItem: {
+		DisplayName: Dynasty Wood Beam
+		Tooltip: Shimmers into the old variant
+	}
+
+	NewSpookyWoodBeamItem: {
+		DisplayName: Spooky Wood Beam
+		Tooltip: Shimmers into the old variant
+	}
+
+	GrayBrickBeamItem: {
+		DisplayName: Gray Brick Column
+		Tooltip: ""
+	}
+
+	StoneSlabBeamItem: {
+		DisplayName: Stone Slab Column
+		Tooltip: ""
+	}
 }
