@@ -22,7 +22,7 @@ Items: {
 	}
 
 	DynastyWoodBeamItem: {
-		DisplayName: Dynasty Wood Beam
+		DisplayName: Ancient Dynasty Wood Beam
 		Tooltip: ""
 	}
 
@@ -35,4 +35,14 @@ Items: {
 		DisplayName: Spooky Wood Beam
 		Tooltip: ""
 	}
+
+    FancyDynastyWoodBeamItem: {
+        DisplayName: Fancy Dynasty Wood Beam
+        Tooltip: ""
+    }
+
+    NewDynastyWoodBeamItem: {
+        DisplayName: Dynasty Wood Beam
+        Tooltip: "Shimmers into the old variant"
+    }
 }
