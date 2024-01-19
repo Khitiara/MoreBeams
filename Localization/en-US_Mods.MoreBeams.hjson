@@ -60,4 +60,9 @@ Items: {
 		DisplayName: Stone Slab Column
 		Tooltip: ""
 	}
+
+	LaserBeamItem: {
+		DisplayName: Laser Beam
+		Tooltip: ""
+	}
 }

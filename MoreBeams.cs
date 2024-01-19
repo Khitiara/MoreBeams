@@ -1,8 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Microsoft.Xna.Framework.Graphics;
 using MoreBeams.Items;
 using MoreBeams.Tiles;
+using ReLogic.Content;
+using Terraria;
+using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -12,8 +17,10 @@ namespace MoreBeams;
 [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicParameterlessConstructor)]
 public sealed class MoreBeams : Mod
 {
-	private readonly List<int>               _beamTilesAdded = new();
+	private readonly  List<int>               _beamTilesAdded = new();
 	internal readonly Dictionary<string, int> BeamItems       = new();
+	private readonly  Dictionary<string, int> _beamTiles       = new();
+	private           Asset<Texture2D>[]      _backupGlows    = null!;
 
 	public override void Load() {
 		// AddBeam(beam_name, dust, material_id)
@@ -32,8 +39,16 @@ public sealed class MoreBeams : Mod
 		AddBeam("NewSpookyWood", DustID.SpookyWood, ItemID.SpookyWood, ancientVariant: "SpookyWood");
 		AddBeam(nameof(ItemID.GrayBrick), DustID.Stone, ItemID.GrayBrick);
 		AddBeam(nameof(ItemID.StoneSlab), DustID.Stone, ItemID.StoneSlab);
+		AddBeam("Laser", DustID.Electric, ItemID.MartianConduitPlating);
 
 		On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
+	}
+
+	public override void PostSetupContent() {
+		_backupGlows = TextureAssets.GlowMask;
+		int end = GlowMaskID.Count;
+		Array.Resize(ref TextureAssets.GlowMask, TextureAssets.GlowMask.Length + 1);
+		AddGlow("Laser", ref end);
 	}
 
 	/// <summary>
@@ -66,13 +81,25 @@ public sealed class MoreBeams : Mod
 		BeamTile tile = new($"{name}Beam", dust);
 		AddContent(tile);
 		_beamTilesAdded.Add(tile.Type);
+		_beamTiles[name] = tile.Type;
 		BeamItem beamItem = new($"{name}BeamItem", item, tile.Type, isAncient, ancientVariant);
 		AddContent(beamItem);
 		BeamItems[name] = beamItem.Type;
 	}
 
+
+	private void AddGlow(string tile, ref int idx) {
+		int beamTile = _beamTiles[tile];
+		Logger.Debug($"Beam {tile} is {beamTile}");
+		Main.tileGlowMask[beamTile] = (short)idx;
+		Logger.Debug($"Set tileGlowMask for {tile}, adding glowmask to textureassets array");
+		TextureAssets.GlowMask[idx++] = ModContent.Request<Texture2D>(ModContent.GetModTile(beamTile).Texture + "_Glow");
+	}
+
 	public override void Unload() {
+		TextureAssets.GlowMask = _backupGlows;
 		_beamTilesAdded.Clear();
 		BeamItems.Clear();
+		_beamTiles.Clear();
 	}
 }
