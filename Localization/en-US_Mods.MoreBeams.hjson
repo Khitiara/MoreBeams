@@ -65,4 +65,49 @@ Items: {
 		DisplayName: Laser Beam
 		Tooltip: ""
 	}
+
+	CopperBrickBeamItem: {
+		DisplayName: Copper Brick Pillar
+		Tooltip: ""
+	}
+
+	GoldBrickBeamItem: {
+		DisplayName: Gold Brick Column
+		Tooltip: ""
+	}
+
+	LeadBrickBeamItem: {
+		DisplayName: Lead Brick Pillar
+		Tooltip: ""
+	}
+
+	IronBrickBeamItem: {
+		DisplayName: Iron Brick Pillar
+		Tooltip: ""
+	}
+
+	ObsidianBrickBeamItem: {
+		DisplayName: Obsidian Brick Column
+		Tooltip: ""
+	}
+
+	PlatinumBrickBeamItem: {
+		DisplayName: Platinum Brick Column
+		Tooltip: ""
+	}
+
+	SilverBrickBeamItem: {
+		DisplayName: Silver Brick Pillar
+		Tooltip: ""
+	}
+
+	TinBrickBeamItem: {
+		DisplayName: Tin Brick Pillar
+		Tooltip: ""
+	}
+
+	TungstenBrickBeamItem: {
+		DisplayName: Tungsten Brick Pillar
+		Tooltip: ""
+	}
 }

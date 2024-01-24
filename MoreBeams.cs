@@ -41,6 +41,16 @@ public sealed class MoreBeams : Mod
 		AddBeam(nameof(ItemID.StoneSlab), DustID.Stone, ItemID.StoneSlab);
 		AddBeam("Laser", DustID.Electric, ItemID.MartianConduitPlating);
 
+		AddBeam(nameof(ItemID.CopperBrick), DustID.Copper, ItemID.CopperBrick);
+		AddBeam(nameof(ItemID.GoldBrick), DustID.Gold, ItemID.GoldBrick);
+		AddBeam(nameof(ItemID.LeadBrick), DustID.Lead, ItemID.LeadBrick);
+		AddBeam(nameof(ItemID.IronBrick), DustID.Iron, ItemID.IronBrick);
+		AddBeam(nameof(ItemID.ObsidianBrick), DustID.Obsidian, ItemID.ObsidianBrick);
+		AddBeam(nameof(ItemID.PlatinumBrick), DustID.Platinum, ItemID.PlatinumBrick);
+		AddBeam(nameof(ItemID.SilverBrick), DustID.Silver, ItemID.SilverBrick);
+		AddBeam(nameof(ItemID.TinBrick), DustID.Tin, ItemID.TinBrick);
+		AddBeam(nameof(ItemID.TungstenBrick), DustID.Tungsten, ItemID.TungstenBrick);
+
 		On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
 	}
 
