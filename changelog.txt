@@ -1,2 +1,2 @@
-﻿Added Laser Beams made from martian conduit plating.
-Added prehardmode ore brick beams.
+﻿Added titanstone beam.
+Darkened most beams

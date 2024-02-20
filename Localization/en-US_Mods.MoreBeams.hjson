@@ -110,4 +110,9 @@ Items: {
 		DisplayName: Tungsten Brick Pillar
 		Tooltip: ""
 	}
+
+	TitanstoneBeamItem: {
+		DisplayName: Titanstone Pillar
+		Tooltip: ""
+	}
 }

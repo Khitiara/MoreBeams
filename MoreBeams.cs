@@ -51,6 +51,8 @@ public sealed class MoreBeams : Mod
 		AddBeam(nameof(ItemID.TinBrick), DustID.Tin, ItemID.TinBrick);
 		AddBeam(nameof(ItemID.TungstenBrick), DustID.Tungsten, ItemID.TungstenBrick);
 
+		AddBeam("Titanstone", DustID.Titanium, ItemID.TitanstoneBlock);
+
 		On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
 	}
 
