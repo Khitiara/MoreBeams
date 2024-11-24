@@ -44,7 +44,6 @@ public sealed class MoreBeams : Mod
         AddBeam("Stone", DustID.Stone, ItemID.StoneBlock);
         AddBeam("Ice", DustID.Ice, ItemID.IceBlock);
         AddBeam(nameof(ItemID.Glass), DustID.Glass, ItemID.Glass);
-        AddBeam("Bubblegum", DustID.Confetti, ItemID.BubblegumBlock);
 
         AddBeam("LivingLeaf", DustID.t_LivingWood, ItemID.Wood, isLiving: true, useWoodGroup: true);
         AddBeam("LivingWood", DustID.t_LivingWood, ItemID.Wood, isLiving: true, useWoodGroup: true);
@@ -64,6 +63,7 @@ public sealed class MoreBeams : Mod
         AddBeam(nameof(ItemID.CobaltBrick), DustID.Cobalt, ItemID.CobaltBrick);
         AddBeam(nameof(ItemID.MythrilBrick), DustID.Mythril, ItemID.MythrilBrick);
         AddBeam(nameof(ItemID.AdamantiteBeam), DustID.Adamantite, ItemID.AdamantiteBeam);
+        AddBeam("Bubblegum", DustID.Orichalcum, ItemID.BubblegumBlock);
         AddBeam(nameof(ItemID.PalladiumColumn), DustID.Palladium, ItemID.PalladiumColumn);
         AddBeam(nameof(ItemID.ChlorophyteBrick), DustID.Chlorophyte, ItemID.ChlorophyteBrick);
         AddBeam("LuminiteBrick", DustID.LunarOre, ItemID.LunarBrick);

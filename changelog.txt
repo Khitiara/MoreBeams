@@ -1,2 +1,1 @@
-﻿Added a bunch more beams.
-Living wood/mahogany beams are crafted at a living loom instead of a sawmill.
+﻿Fixed particles for bubblegum.
