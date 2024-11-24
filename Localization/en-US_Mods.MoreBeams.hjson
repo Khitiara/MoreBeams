@@ -115,4 +115,104 @@ Items: {
 		DisplayName: Titanstone Pillar
 		Tooltip: ""
 	}
+
+	StoneBeamItem: {
+		Tooltip: ""
+		DisplayName: Stone Pillar
+	}
+
+	IceBeamItem: {
+		DisplayName: Ice Pillar
+		Tooltip: ""
+	}
+
+	GlassBeamItem: {
+		DisplayName: Glass Beam
+		Tooltip: ""
+	}
+
+	BubblegumBeamItem: {
+		DisplayName: Bubblegum Beam
+		Tooltip: ""
+	}
+
+	LivingLeafBeamItem: {
+		DisplayName: Living Leaf Beam
+		Tooltip: ""
+	}
+
+	LivingWoodBeamItem: {
+		DisplayName: Living Wood Beam
+		Tooltip: ""
+	}
+
+	LivingMahoganyBeamItem: {
+		DisplayName: Living Mahogany Beam
+		Tooltip: ""
+	}
+
+	MahoganyLeafBeamItem: {
+		DisplayName: Mahogany Leaf Beam
+		Tooltip: ""
+	}
+
+	MeteoriteBrickBeamItem: {
+		DisplayName: Meteorite Brick Beam
+		Tooltip: ""
+	}
+
+	CobaltBrickBeamItem: {
+		DisplayName: Cobalt Brick Pillar
+		Tooltip: ""
+	}
+
+	MythrilBrickBeamItem: {
+		DisplayName: Mythril Brick Pillar
+		Tooltip: ""
+	}
+
+	AdamantiteBeamBeamItem: {
+		DisplayName: Adamantite Beam Beam
+		Tooltip: ""
+	}
+
+	PalladiumColumnBeamItem: {
+		DisplayName: Palladium Column Column
+		Tooltip: ""
+	}
+
+	ChlorophyteBrickBeamItem: {
+		DisplayName: Chlorophyte Brick Beam
+		Tooltip: ""
+	}
+
+	LuminiteBrickBeamItem: {
+		DisplayName: Luminite Brick Pillar
+		Tooltip: ""
+	}
+
+	CrimtaneBrickBeamItem: {
+		DisplayName: Crimtane Brick Column
+		Tooltip: ""
+	}
+
+	DemoniteBrickBeamItem: {
+		DisplayName: Demonite Brick Column
+		Tooltip: ""
+	}
+
+	EaterofBeamItem: {
+		DisplayName: Eater of Beams
+		Tooltip: ""
+	}
+
+	SpinalBeamItem: {
+		DisplayName: Spinal Column
+		Tooltip: ""
+	}
+
+	ShroomitePlatingBeamItem: {
+		DisplayName: Shroomite Plating Pillar
+		Tooltip: ""
+	}
 }

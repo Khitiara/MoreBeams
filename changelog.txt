@@ -1,2 +1,2 @@
-﻿Added titanstone beam.
-Darkened most beams
+﻿Added a bunch more beams.
+Living wood/mahogany beams are crafted at a living loom instead of a sawmill.
