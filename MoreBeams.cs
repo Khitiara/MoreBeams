@@ -20,7 +20,6 @@ public sealed class MoreBeams : Mod
     private readonly List<int> _beamTilesAdded = new();
     internal readonly Dictionary<string, int> BeamItems = new();
     private readonly Dictionary<string, int> _beamTiles = new();
-    private Asset<Texture2D>[] _backupGlows = null!;
 
     public override void Load()
     {
@@ -40,7 +39,7 @@ public sealed class MoreBeams : Mod
         AddBeam("NewSpookyWood", DustID.SpookyWood, ItemID.SpookyWood, ancientVariant: "SpookyWood");
         AddBeam(nameof(ItemID.GrayBrick), DustID.Stone, ItemID.GrayBrick);
         AddBeam(nameof(ItemID.StoneSlab), DustID.Stone, ItemID.StoneSlab);
-        AddBeam("Laser", DustID.Electric, ItemID.MartianConduitPlating);
+        AddBeam("Laser", DustID.Electric, ItemID.MartianConduitPlating, glow: true);
         AddBeam("Stone", DustID.Stone, ItemID.StoneBlock);
         AddBeam("Ice", DustID.Ice, ItemID.IceBlock);
         AddBeam(nameof(ItemID.Glass), DustID.Glass, ItemID.Glass);
@@ -80,14 +79,6 @@ public sealed class MoreBeams : Mod
         On_TileObjectData.isValidAlternateAnchor += OnTileObjectDataOnIsValidAlternateAnchor;
     }
 
-    public override void PostSetupContent()
-    {
-        _backupGlows = TextureAssets.GlowMask;
-        int end = GlowMaskID.Count;
-        Array.Resize(ref TextureAssets.GlowMask, TextureAssets.GlowMask.Length + 1);
-        AddGlow("Laser", ref end);
-    }
-
     /// <summary>
     /// Patch isValidAlternateAnchor to allow placing switches etc on mod beams.
     /// </summary>
@@ -119,10 +110,11 @@ public sealed class MoreBeams : Mod
     /// <param name="ancientVariant"></param>
     /// <param name="isLiving"></param>
     /// <param name="useWoodGroup"></param>
+    /// <param name="glow"></param>
     private void AddBeam(string name, short dust, short item, bool isAncient = false, string? ancientVariant = null,
-        bool isLiving = false, bool useWoodGroup = false)
+        bool isLiving = false, bool useWoodGroup = false, bool glow = false)
     {
-        BeamTile tile = new($"{name}Beam", dust);
+        BeamTile tile = new($"{name}Beam", dust, glow);
         AddContent(tile);
         _beamTilesAdded.Add(tile.Type);
         _beamTiles[name] = tile.Type;
@@ -131,20 +123,8 @@ public sealed class MoreBeams : Mod
         BeamItems[name] = beamItem.Type;
     }
 
-
-    private void AddGlow(string tile, ref int idx)
-    {
-        int beamTile = _beamTiles[tile];
-        Logger.Debug($"Beam {tile} is {beamTile}");
-        Main.tileGlowMask[beamTile] = (short)idx;
-        Logger.Debug($"Set tileGlowMask for {tile}, adding glowmask to textureassets array");
-        TextureAssets.GlowMask[idx++] =
-            ModContent.Request<Texture2D>(ModContent.GetModTile(beamTile).Texture + "_Glow");
-    }
-
     public override void Unload()
     {
-        TextureAssets.GlowMask = _backupGlows;
         _beamTilesAdded.Clear();
         BeamItems.Clear();
         _beamTiles.Clear();

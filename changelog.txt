@@ -1,1 +1,1 @@
-﻿Fixed particles for bubblegum.
+﻿Made glow masks much less hacky. Should improve compat.
