@@ -3,3 +3,4 @@ Adds beams for all types of wood which are missing them in vanilla. Thanks to Ez
 UPDATE 0.6: Added a bunch more beams. Living wood/mahogany beams are crafted at a living loom instead of a sawmill.
 UPDATE 0.6.1: Fixed dust particles for bubblegum beams.
 UPDATE 0.6.2: Made glow masks much less hacky. Should improve compat.
+UPDATE 0.6.3: Defensive fix to reported worldgen issue

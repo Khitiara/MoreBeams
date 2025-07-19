@@ -86,12 +86,12 @@ public sealed class MoreBeams : Mod
         TileObjectData self, int type)
     {
         bool ret = orig(self, type);
-        // only patch in ours if the vanilla thing makes an exception for vanilla beams
-        if (!ret && self.AnchorAlternateTiles.Contains(TileID.WoodenBeam)) {
+        if (!ret && self is { AnchorAlternateTiles: {} alts } && alts.Contains(TileID.WoodenBeam)) {
             // ModContent to avoid capturing mod
             return ModContent.GetInstance<MoreBeams>()._beamTilesAdded.Contains(type);
         }
 
+        // only patch in ours if the vanilla thing makes an exception for vanilla beams
         return ret;
     }
 

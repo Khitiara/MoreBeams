@@ -1,1 +1,1 @@
-﻿Made glow masks much less hacky. Should improve compat.
+﻿Defensive fix to reported worldgen issue

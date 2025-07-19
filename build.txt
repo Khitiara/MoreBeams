@@ -1,5 +1,5 @@
 displayName = More Beams
 author = Khitiara, Ezren, PossiblyBlu3
-version = 0.6.2
+version = 0.6.3
 buildIgnore = .vs\*, Properties\*, *.csproj, *.user, obj\*, bin\*, *.config, ignore\*, .git\*, .idea\*, template.png, preview.png
 homepage = https://github.com/Khitiara/MoreBeams
